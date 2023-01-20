@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, setContactsFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/operations';
 import {
   ContactListItem,
   ContactsList,
@@ -23,15 +23,6 @@ export function ContactList() {
     }
     return items;
   };
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
-  // console.log(applyFilter());
-  // const m = applyFilter();
-  // const n = m.map(item => item.name);
-  // console.log(n);
 
   return (
     <ContactsList>

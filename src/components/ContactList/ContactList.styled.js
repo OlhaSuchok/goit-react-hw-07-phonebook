@@ -7,7 +7,7 @@ export const ContactsList = styled.ul`
 
 export const ContactListItem = styled.li`
   position: relative;
-  margin-bottom: ${props => props.theme.space[3]}px;
+  margin-bottom: ${props => props.theme.space[4]}px;
   color: ${props => props.theme.colors.mainText};
   font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.text};

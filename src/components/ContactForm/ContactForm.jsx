@@ -15,7 +15,6 @@ export default function ContactForm() {
   // const contacts = useSelector(getContacts);
   const items = useSelector(getContacts);
   const dispatch = useDispatch();
-  console.log(items);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -31,15 +30,12 @@ export default function ContactForm() {
     } else {
       dispatch(addContact(newContact));
     }
-    console.log(items);
     form.reset();
   };
 
   // useEffect(() => {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
-
-  console.log(items);
 
   return (
     <ContactFormWrapper onSubmit={handleSubmit}>
