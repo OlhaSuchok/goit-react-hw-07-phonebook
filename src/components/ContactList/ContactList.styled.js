@@ -9,7 +9,7 @@ export const ContactListItem = styled.li`
   position: relative;
   margin-bottom: ${props => props.theme.space[3]}px;
   color: ${props => props.theme.colors.mainText};
-  font-size: ${props => props.theme.fontSizes.m};
+  font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.text};
 `;
 

@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { useSelector } from 'react-redux';
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/operations';
 import { Box } from 'components/Box/Box';
 import ContactForm from './ContactForm/ContactForm';
 import { ContactFormTitle } from './ContactFormTitle/ContactFormTitle';
@@ -14,11 +14,7 @@ export default function PhoneBoock() {
   const items = useSelector(getContacts);
   console.log(items);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
 
   return (
     <div
