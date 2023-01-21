@@ -1,8 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operations';
 import { nanoid } from 'nanoid';
 import {
   ContactFormWrapper,
@@ -12,8 +10,8 @@ import {
 } from './ContactForm.styled';
 
 export default function ContactForm() {
-  // const contacts = useSelector(getContacts);
   const items = useSelector(getContacts);
+
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
@@ -32,10 +30,6 @@ export default function ContactForm() {
     }
     form.reset();
   };
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
 
   return (
     <ContactFormWrapper onSubmit={handleSubmit}>

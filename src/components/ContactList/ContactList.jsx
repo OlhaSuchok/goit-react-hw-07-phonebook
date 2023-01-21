@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, setContactsFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/operations';
+import { getVisibleContacts } from 'redux/selectors';
+
 import {
   ContactListItem,
   ContactsList,
@@ -11,22 +12,15 @@ import {
 
 export function ContactList() {
   const dispatch = useDispatch();
-  // const contacts = useSelector(getContacts);
-  const items = useSelector(getContacts);
-  const contactsFilter = useSelector(setContactsFilter);
+  const visibleContacts = useSelector(getVisibleContacts);
 
-  const applyFilter = () => {
-    if (contactsFilter) {
-      return items.filter(item =>
-        item.name.toLowerCase().includes(contactsFilter.toLowerCase())
-      );
-    }
-    return items;
-  };
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <ContactsList>
-      {applyFilter().map(item => (
+      {visibleContacts.map(item => (
         <ContactListItem key={item.id}>
           {item.name}: {item.phone}
           <ContactListButtonDelete

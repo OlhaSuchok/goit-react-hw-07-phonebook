@@ -1,22 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from 'redux/operations';
 
-// export const contactSlice = createSlice({
-//   name: 'contacts',
-//   initialState: contactsInitialState,
-//   reducers: {
-//     addContactAction(state, action) {
-//       return [...state.items, action.payload];
-//     },
-//     removeContactAction(state, action) {
-//       return state.items.filter(item => item.id !== action.payload);
-//     },
-//   },
-// });
-
-// export const { addContactAction, removeContactAction } = contactSlice.actions;
-// export const contactsReducer = contactSlice.reducer;
-
 const handlePending = state => {
   state.isLoading = true;
 };
