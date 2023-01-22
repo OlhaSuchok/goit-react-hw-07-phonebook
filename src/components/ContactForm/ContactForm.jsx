@@ -28,6 +28,11 @@ export default function ContactForm() {
     } else {
       dispatch(addContact(newContact));
     }
+
+    // if (!isContact) {
+    //   dispatch(addContact(newContact));
+    // }
+
     form.reset();
   };
 
