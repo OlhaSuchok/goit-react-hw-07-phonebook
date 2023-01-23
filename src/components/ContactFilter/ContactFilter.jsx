@@ -1,21 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { filterContactsAction } from 'redux/filters/filterSlice';
-import { getContactsFilter } from 'redux/selectors';
+import { selectContactsFilter } from 'redux/selectors';
 import React from 'react';
-import { FindText, FindValue } from './ContactFilter.styled';
+import { FindValue } from './ContactFilter.styled';
 
 export function ContactFilter() {
-  const contactsFilter = useSelector(getContactsFilter);
+  const contactsFilter = useSelector(selectContactsFilter);
   const dispatch = useDispatch();
 
   return (
-    <FindText>
-      Find contacts by name
-      <FindValue
-        type="text"
-        value={contactsFilter}
-        onChange={event => dispatch(filterContactsAction(event.target.value))}
-      ></FindValue>
-    </FindText>
+    <FindValue
+      type="text"
+      value={contactsFilter}
+      onChange={event => dispatch(filterContactsAction(event.target.value))}
+      placeholder="Find contacts by name"
+    ></FindValue>
   );
 }

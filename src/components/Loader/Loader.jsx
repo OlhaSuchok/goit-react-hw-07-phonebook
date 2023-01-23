@@ -1,32 +1,21 @@
-import { Blocks } from 'react-loader-spinner';
-
-// export default function Loader() {
-//   return (
-//     <Hearts
-//       height="80"
-//       width="80"
-//       color="#FF4500"
-//       ariaLabel="hearts-loading"
-//       wrapperStyle={{
-//         display: 'flex',
-//         justifyContent: 'center',
-//         marginTop: '15px',
-//       }}
-//       wrapperClass=""
-//       visible={true}
-//     />
-//   );
-// }
+import { Oval } from 'react-loader-spinner';
 
 export default function Loader() {
   return (
-    <Blocks
+    <Oval
+      width={50}
+      color="#0059ff"
+      wrapperClass=""
       visible={true}
-      height="80"
-      width="80"
-      ariaLabel="blocks-loading"
-      wrapperStyle={{}}
-      wrapperClass="blocks-wrapper"
+      ariaLabel="oval-loading"
+      secondaryColor="#4fa94d"
+      strokeWidth={2}
+      strokeWidthSecondary={2}
+      wrapperStyle={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '',
+      }}
     />
   );
 }

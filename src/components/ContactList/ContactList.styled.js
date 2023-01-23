@@ -1,47 +1,63 @@
 import styled from '@emotion/styled';
+import { MdDeleteOutline } from 'react-icons/md';
 
 export const ContactsList = styled.ul`
   margin-top: 0;
   margin-bottom: 0;
+  background-color: ${props => props.theme.colors.secondary};
+  border: 2px solid ${props => props.theme.colors.border};
+  border-radius: 4px;
+  padding: 16px;
+  list-style: none;
+  width: 400px;
+  height: 350px;
+  overflow: auto;
 `;
 
 export const ContactListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  margin-bottom: ${props => props.theme.space[4]}px;
   color: ${props => props.theme.colors.mainText};
   font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.text};
+
+  &:not(:last-child) {
+    margin-bottom: ${props => props.theme.space[4]}px;
+  }
 `;
 
 export const ContactListButtonDelete = styled.button`
-  position: absolute;
-  right: 0;
-  align-self: center;
+  background-color: transparent;
+  border: none;
+`;
 
-  margin-left: ${props => props.theme.space[4]}px;
-  padding: 4px 10px;
-  color: ${props => props.theme.colors.accent};
-  background-color: ${props => props.theme.colors.primary};
-  border-radius: ${props => props.theme.space[2]}px;
-  border-style: none;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+export const ContactListTextWrapper = styled.div`
+  background-color: ${props => props.theme.colors.item};
+  border: 2px solid ${props => props.theme.colors.border};
+  border-radius: 4px;
+  width: 302px;
+  padding: 6px 10px;
+`;
 
-  font-size: ${props => props.theme.fontSizes.s};
-  font-weight: ${props => props.theme.fontWeights.button};
+export const ContactListItemName = styled.p`
+  margin-top: 0;
+  margin-bottom: 10px;
+`;
 
-  &:not(:last-child) {
-    margin-right: ${props => props.theme.space[3]}px;
-  }
+export const ContactListItemPhone = styled.p`
+  margin-top: 0;
+  margin-bottom: 0;
+`;
+
+export const MdDeleteOutlineIcons = styled(MdDeleteOutline)`
+  color: ${props => props.theme.colors.icons};
 
   &:hover,
   &:focus {
-    background-color: ${props => props.theme.colors.hover};
-    box-shadow: none;
+    color: ${props => props.theme.colors.iconsHover};
   }
-`;
 
-export const ContactFormTitle = styled.h2`
-  margin-top: ${props => props.theme.space[3]}px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

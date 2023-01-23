@@ -1,10 +1,15 @@
 export const theme = Object.freeze({
   colors: {
-    primary: '#00bfff',
-    secondary: '#F0F8FF',
+    primary: '#B0C4DE',
+    secondary: '#87CEFA',
+    item: '#FFF0F5',
+    input: '#FFFAFA',
+    icons: '		#483D8B',
+    iconsHover: '		#E0FFFF',
+
     accent: '#ffffff',
-    mainText: '#2a2a2a',
-    border: '#C0C0C0',
+    mainText: '	#483D8B',
+    border: '#778899',
     hover: '#7fffd4',
     pink: '#DDA0DD',
     red: '#FF0000',

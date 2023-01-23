@@ -1,17 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-// import { getIsLoading } from 'redux/selectors';
 import { Box } from 'components/Box/Box';
 import ContactForm from './ContactForm/ContactForm';
-import { ContactFormTitle } from './ContactFormTitle/ContactFormTitle';
+import {
+  ContactFormTitle,
+  ContactFormSecondTitle,
+} from './ContactFormTitle/ContactFormTitle';
 import { ContactList } from './ContactList/ContactList';
 import { ContactFilter } from './ContactFilter/ContactFilter';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 
 export default function PhoneBoock() {
-  const items = useSelector(getContacts);
-  // const loading = useSelector(getIsLoading);
+  const items = useSelector(selectContacts);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,20 +30,18 @@ export default function PhoneBoock() {
       }}
     >
       <Box
+        height={750}
         p={30}
-        bg="secondary"
+        bg="primary"
         border="2px solid"
         borderColor="border"
         borderRadius={8}
       >
-        <ContactFormTitle>PhoneBook</ContactFormTitle>
+        <ContactFormTitle>PHONEBOOK</ContactFormTitle>
         <ContactForm />
         <ContactFilter />
-        {/* {items.length > 0 && <ContactFormTitle>Contacts</ContactFormTitle>}
-        {items.length > 0 && <ContactList />} */}
-        {items && <ContactFormTitle>Contacts</ContactFormTitle>}
+        <ContactFormSecondTitle>CONTACTS</ContactFormSecondTitle>
         {items && <ContactList />}
-        {/* {items && <ContactList />} */}
       </Box>
     </div>
   );
